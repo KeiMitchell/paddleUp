@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PaddleUp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+  %header.header
+    .header__logo
+      = link_to root_path, class: "header__logo--link" do
+        paddleUp
+    .header__message
+      %p カヌーしに行かぬ〜？
+
+    = yield
+
+  %footer.footer
+    .footer__share
+      %p find us on
+      = link_to root_path, class: "footer__share--link" do
+        Facebook
+      %br/
+      = link_to root_path, class: "footer__share--link" do
+        Twitter
+
+
