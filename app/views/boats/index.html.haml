@@ -1,8 +1,9 @@
+
 .content
-  .content_post
-    - @boats.each do |boat|
-      %p tweet.description
+  - @boats.each do |boat|
+    .content__post{:style => "background-image: url(#{image_path "#{boat.image}"})"}
+      = boat.description
       %br/
-      %p tweet.brand_id
+      = boat.brand_id
       %br/
-      %p tweet.size_id
+      = boat.size_id
