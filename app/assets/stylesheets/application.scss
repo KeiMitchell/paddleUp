@@ -1,3 +1,4 @@
+@import "boats";
 * {
   margin: 0px;
   padding: 0px;
@@ -19,6 +20,10 @@
   }
   &__message {
   }
+}
+
+.content {
+  width: 100%;
 }
 
 .footer {
