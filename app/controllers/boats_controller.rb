@@ -1,4 +1,6 @@
 class BoatsController < ApplicationController
+  before_action :set_boat, only: [:edit, :show]
+
   def index
     @boats = Boat.all
   end
@@ -17,7 +19,6 @@ class BoatsController < ApplicationController
   end
 
   def edit
-    @boat = Boat.find(params[:id])
   end
 
   def update
@@ -26,10 +27,13 @@ class BoatsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+  def set_boat
     @boat = Boat.find(params[:id])
   end
-  
-  private
+
   def boat_params
     params.require(:boat).permit(:image, :description, :brand_id, :size_id)
   end
