@@ -13,6 +13,8 @@
       %span= image_tag 'arrow_top.png'
       %ul.more_list
         %li
+          = link_to '編集', edit_boat_path(boat.id), method: :get
+        %li
           = link_to '削除', boat_path(boat.id), method: :delete
     .boat-wrapper__info
     .boat-wrapper__info--description
