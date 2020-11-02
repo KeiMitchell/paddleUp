@@ -25,6 +25,10 @@ class BoatsController < ApplicationController
     boat.update(boat_params)
   end
 
+  def show
+    @boat = Boat.find(params[:id])
+  end
+  
   private
   def boat_params
     params.require(:boat).permit(:image, :description, :brand_id, :size_id)
