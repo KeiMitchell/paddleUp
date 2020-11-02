@@ -1,9 +1,25 @@
+.top-wrapper
+  = link_to new_boat_path do
+    船を登録する！
+  = link_to new_boat_path do
+    船を探す！
 
-.content
+.boat-wrapper
+  .boat-wrapper__header
+    Boats
   - @boats.each do |boat|
-    .content__post{:style => "background-image: url(#{image_path "#{boat.image}"})"}
+    .boat-wrapper__post{:style => "background-image: url(#{image_path "#{boat.image}"})"}
+    .boat-wrapper__more
+      %span= image_tag 'arrow_top.png'
+      %ul.more_list
+        %li
+          = link_to '削除', boat_path(boat.id), method: :delete
+    .boat-wrapper__info
+    .boat-wrapper__info--description
       = boat.description
-      %br/
+    %br/
+    .boat-wrapper__info--brand
       = boat.brand_id
-      %br/
+    %br/
+    .boat-wrapper__size
       = boat.size_id
