@@ -2,16 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.content {
+.top-wrapper {  
+  background-color: green($color: #000000);
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.boat-wrapper {
   background-color: yellow;
-  display: flex;
+  &__header {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+  }
   &__post {
-    position: relative;
     background-size: contain;
     background-repeat: no-repeat;
     width: 500px;
     height: 300px;
     margin: 20px;
     color: white;
+  }
+  &__more {
+
+  }
+  &__info {
+    
   }
 }
