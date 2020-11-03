@@ -9,10 +9,11 @@
       %ul.more_list
         %li
           = link_to '詳細', boat_path(boat.id), method: :get
-        %li
-          = link_to '編集', edit_boat_path(boat.id), method: :get
-        %li
-          = link_to '削除', boat_path(boat.id), method: :delete
+        - if user_signed_in? && current_user.id == boat.user_id
+          %li
+            = link_to '編集', edit_boat_path(boat.id), method: :get
+          %li
+            = link_to '削除', boat_path(boat.id), method: :delete
     .boat-wrapper__info
     .boat-wrapper__info--description
       = boat.description
