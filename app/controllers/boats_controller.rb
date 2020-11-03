@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @boats = Boat.all
+    @boats = Boat.includes(:user)
   end
 
   def new
