@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @boats = Boat.all
+    @boats = Boat.includes(:user)
   end
 
   def new
@@ -42,6 +42,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:image, :description, :brand_id, :size_id)
+    params.require(:boat).permit(:image, :description, :brand_id, :size_id).merge(user_id: current_user.id)
   end
 end
