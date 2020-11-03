@@ -24,6 +24,6 @@
       = boat.size_id
     .boat-wrappaer__owner
       %span.name
-        %a{:href => ""}
+        %a{:href => "/users/#{boat.user.id}"}
           %span 投稿者
           = boat.user.nickname
