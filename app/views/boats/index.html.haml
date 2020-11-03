@@ -22,3 +22,8 @@
     %br/
     .boat-wrapper__size
       = boat.size_id
+    .boat-wrappaer__owner
+      %span.name
+        %a{:href => ""}
+          %span 投稿者
+          = boat.user.nickname
