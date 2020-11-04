@@ -1,34 +1,63 @@
 @import "boats";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   }
+
+li, a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
   
 .header {
   width: 100%;
-  height: 150px;
-  background-color: blue;
+  height: 100px;
+  background-color: #24252A;
   color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px, 10%;
   &__logo {
-    font-size: 20px;
     font-weight: bold;
     text-align: center;
+    margin-left: 20px;
+    margin-right: auto;
     &--link {
       text-decoration: none;
       color: white;
+      font-size: 30px;
     }
   }
   &__message {
     text-align: center;
   }
   &__user {
-    float: right;
-    &--btn{
-      text-decoration: none;
-      color: white;
-    }
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+  }
+  &__user:hover {
+    color: #0088a9;
+  }
+  &__btn {
+    margin-right: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  &__btn:hover {
+    background-color: rgba(0,136,169,0.8);
   }
 }
+
 
 .content {
   width: 100%;
