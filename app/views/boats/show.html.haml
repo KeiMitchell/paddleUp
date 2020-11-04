@@ -16,3 +16,19 @@
 %br/
 .boat-wrapper__size
   = @boat.size_id
+- if current_user
+  = form_with(model: [@boat, @comment], local: true) do |form|
+    = form.text_area :text, placeholder: "コメントする", rows: "2"
+    = form.submit "SEND"
+- else
+  %strong
+    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+.comments
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        %strong
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          ：
+        = comment.text

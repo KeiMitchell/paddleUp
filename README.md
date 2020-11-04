@@ -26,7 +26,7 @@
 - has_many: comments
 - has_one :spot
 
-#commentsテーブル
+# commentsテーブル
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false|
