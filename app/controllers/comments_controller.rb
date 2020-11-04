@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to "/boats/#{comments.boat.id}" #redirect to boat詳細画面
+    comment = Comment.create(comment_params)
+    redirect_to "/boats/#{comment.boat.id}" #redirect to boat詳細画面
   end
 
   private

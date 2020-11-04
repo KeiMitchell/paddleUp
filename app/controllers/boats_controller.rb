@@ -28,6 +28,8 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new #新規コメント投稿
+    @comments = @boat.comments.includes(:user) #アソシエーションにより@boatsに関連する全てのcommnetsを取得 includes(:user)によりN+1問題を解消している
   end
 
   private
