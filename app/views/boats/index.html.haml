@@ -7,28 +7,5 @@
     = form.submit "検索", class: "search-btn"
 
   - @boats.each do |boat|
-    .boat-wrapper__post{:style => "background-image: url(#{image_path "#{boat.image}"})"}
-    .boat-wrapper__more
-      %span= image_tag 'arrow_top.png'
-      %ul.more_list
-        %li
-          = link_to '詳細', boat_path(boat.id), method: :get
-        - if user_signed_in? && current_user.id == boat.user_id
-          %li
-            = link_to '編集', edit_boat_path(boat.id), method: :get
-          %li
-            = link_to '削除', boat_path(boat.id), method: :delete
-    .boat-wrapper__info
-    .boat-wrapper__info--description
-      = boat.description
-    %br/
-    .boat-wrapper__info--brand
-      = boat.brand_id
-    %br/
-    .boat-wrapper__size
-      = boat.size_id
-    .boat-wrappaer__owner
-      %span.name
-        %a{:href => "/users/#{boat.user.id}"}
-          %span 投稿者
-          = boat.user.nickname
+    = render partial: "boat", locals: { boat: boat } #localsオプションは部分テンプレート内でその変数が使えるようにする
+
