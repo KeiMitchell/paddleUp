@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   before_action :set_boat, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @boats = Boat.includes(:user).order("created_at DESC")
@@ -30,6 +30,10 @@ class BoatsController < ApplicationController
   def show
     @comment = Comment.new #新規コメント投稿
     @comments = @boat.comments.includes(:user) #アソシエーションにより@boatsに関連する全てのcommnetsを取得 includes(:user)によりN+1問題を解消している
+  end
+
+  def search
+    @boats = Boat.search(params[:keyword]) #引数にparams[:keyword]と引数を設定することで検索結果を渡している
   end
 
   private
