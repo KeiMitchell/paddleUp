@@ -20,19 +20,21 @@
       .header__btn
         = link_to '船を登録する', new_boat_path
       .header__user
-        = current_user.nickname
         %ul.header__user--info
           %li
-            = link_to 'マイページ', "/users/#{current_user.id}", class:'header__user--btn'
+            = current_user.nickname
           %li
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete,  class: 'header__user--btn'
+            = link_to 'マイページ', "/users/#{current_user.id}"
+          %li
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
     - else
-      %ul.header__user--info
-        %li
-          = link_to 'ログイン', new_user_session_path, class: 'header__user--btn'
-        %li
-          = link_to '新規登録', new_user_registration_path, class: 'header__user--btn'
-      
+      .header__user
+        %ul.header__user--info
+          %li
+            = link_to 'ログイン', new_user_session_path, class: 'header__user--login'
+          %li
+            = link_to '新規登録', new_user_registration_path, class: 'header__user--signup'
+        
   .content
     = yield
 
