@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 
 .top-wrapper {
@@ -7,7 +7,13 @@
   text-align: center;
   &__message {
    &--top {
+    font-family: 'Abril Fatface', cursive;
      font-size: 60px;
+   }
+   &--bottom {
+     font-size: 25px;
+     font-weight: bold;
+     margin: 10px;
    }
   }
   .search-form {
