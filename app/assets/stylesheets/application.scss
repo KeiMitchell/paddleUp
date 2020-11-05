@@ -1,5 +1,8 @@
 @import "boats";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -88,14 +91,81 @@ li, a {
 
 .footer {
   width: 100%;
-  text-align: center;
-  background-color: black;
-  color: white;
-  &__share {
-    &--link{
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
+  height: auto;
+  margin: auto;
+  padding: 20px 0;
+  background-color: #24252A;
+  color: #edf0fe;
+  &__message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__icons{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    &--facebook{
+      margin-left: 35%;
+      text-align: center;
+      padding-top: 8px;
+      background-color: rgba(0,136,169,1);
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4 ease 0s;
+      color: #edf0fe;
+    }
+    &--twitter{
+      text-align: center;
+      padding-top: 8px;
+      background-color: rgba(0,136,169,1);
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4 ease 0s;
+      color: #edf0fe;
+    }
+    &--youtube{
+      text-align: center;
+      padding-top: 8px;
+      background-color: rgba(0,136,169,1);
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4 ease 0s;
+      color: #edf0fe;
+    }
+    &--instagram{
+      margin-right: 35%;
+      text-align: center;
+      padding-top: 8px;
+      background-color: rgba(0,136,169,1);
+      height: 40px;
+      width: 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4 ease 0s;
+      color: #edf0fe;
+    }
+    &--facebook:hover {
+      background-color: rgba(0,136,169,0.8);
+    } 
+    &--twitter:hover {
+      background-color: rgba(0,136,169,0.8);
+    } 
+    &--youtube:hover {
+      background-color: rgba(0,136,169,0.8);
+    } 
+    &--instagram:hover {
+      background-color: rgba(0,136,169,0.8);
     }
   }
 }

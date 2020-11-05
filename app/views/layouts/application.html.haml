@@ -39,12 +39,23 @@
     = yield
 
   %footer.footer
-    .footer__share
-      %p find us on
-      = link_to root_path, class: "footer__share--link" do
-        Facebook
-      %br/
-      = link_to root_path, class: "footer__share--link" do
-        Twitter
+    .footer
+      .footer__message
+        find us on
+      .footer__icons
+        .footer__icons--facebook
+          = link_to "https://www.facebook.com/" do
+            = icon('fab', 'facebook-square')
+        .footer__icons--twitter
+          = link_to "https://twitter.com/" do
+            = icon('fab', 'twitter')
+        .footer__icons--youtube
+          = link_to "https://www.youtube.com/results?search_query=footer+sns+html+css" do
+            = icon('fab', 'youtube')
+        .footer__icons--instagram
+          = link_to "https://www.instagram.com/k_mitchell611/" do
+            = icon('fab', 'instagram')
+          
+
 
 
