@@ -50,14 +50,36 @@
   }
 }
 
-
 .boat-wrapper {
   background-color: yellow;
-
-  &__header {
+  &__top {
     width: 100%;
+    padding: 20px;
+    font-size: 20px;
     font-weight: bold;
-    text-align: center;
+  }
+  &__post {
+    width: 350px;
+    height: auto;
+    background-color:  #0088a9;
+    margin: 0 0 20px 30px;
+    border-radius: 20px;
+
+    &--image {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    &--more {
+      float: right;
+      padding-right: 20px;
+    }
+    &--info {
+      padding: 20px;
+    }
   }
 }
 
