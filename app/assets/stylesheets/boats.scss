@@ -51,7 +51,9 @@
 }
 
 .boat-wrapper {
-  background-color: yellow;
+  background-color:#edf0fe;
+  display: flex;
+  flex-wrap: wrap;
   &__top {
     width: 100%;
     padding: 20px;
