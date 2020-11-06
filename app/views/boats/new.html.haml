@@ -1,9 +1,18 @@
 .contents-row
   .container
   %h3 投稿する
-  = form_with model: @boat, local: true do |form|
-    = form.file_field :image
-    = form.text_field :description, placeholder: "description", rows: "10"
-    = form.collection_select :brand_id, Brand.all, :id, :name, { prompt:  '選択してください' }
-    = form.collection_select :size_id, Size.all, :id, :name, { prompt:  '選択してください' }
-    = form.submit "登録"
+  = form_with model: @boat, local: true do |f|
+    .boat-form__field
+      .boat-form__field--image
+        = f.file_field :image #データベースに未追加の項目
+      .boat-form__field--namebox
+        = f.text_field :name, placeholder: "商品名"
+      .boat-form__field--brandbox
+        = f.collection_select :brand_id, Brand.all, :id, :name, { prompt:  '選択してください' }
+      .boat-form__field--sizebox
+        = f.collection_select :size_id, Size.all, :id, :name, { prompt:  '選択してください' }
+      .boat-form__field--descriptionbox
+        = f.text_area :description, placeholder: "船の説明(必須 1,000文字以内) (色、重さ、注意点など）", rows: "10"
+      .boat-form__field--price
+        = f.number_field :price, placeholder: "0" #データベースに未追加
+      = f.submit "登録する"
