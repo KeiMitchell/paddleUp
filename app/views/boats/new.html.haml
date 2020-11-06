@@ -4,6 +4,6 @@
   = form_with model: @boat, local: true do |form|
     = form.file_field :image
     = form.text_field :description, placeholder: "description", rows: "10"
-    = form.text_field :brand_id, placeholder: "brand id"
+    = form.select :brand_id, {'Nelo': 1, 'Plastex': 2, 'Elio': 3, 'Vadja': 4, 'Epic': 5, 'Struer Kajak': 6, 'Hikari': 7}, { include_blank: '選択してください' } , { class: 'form-control' , required: true }
     = form.text_field :size_id, placeholder: "size id"
     = form.submit "登録"
