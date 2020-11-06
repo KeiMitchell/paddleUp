@@ -11,10 +11,8 @@
 
 
 .boat-wrapper
-
-  .boat-wrapper__header
-    Boats
-
+  .boat-wrapper__top
+    You Might Like
   - @boats.each do |boat|
     = render partial: "boat", locals: { boat: boat } #localsオプションは部分テンプレート内でその変数が使えるようにする
 
