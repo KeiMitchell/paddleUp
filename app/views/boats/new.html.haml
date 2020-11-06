@@ -5,5 +5,5 @@
     = form.file_field :image
     = form.text_field :description, placeholder: "description", rows: "10"
     = form.select :brand_id, {'Nelo': 1, 'Plastex': 2, 'Elio': 3, 'Vadja': 4, 'Epic': 5, 'Struer Kajak': 6, 'Hikari': 7}, { include_blank: '選択してください' } , { class: 'form-control' , required: true }
-    = form.text_field :size_id, placeholder: "size id"
+    = form.select :size_id, {'S': 1, 'M': 2, 'ML': 3, 'L': 4, 'XXL': 5, 'XXXL': 6}, { include_blank: '選択してください' } , { class: 'form-control', required: true }
     = form.submit "登録"
