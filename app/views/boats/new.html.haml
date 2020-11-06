@@ -5,5 +5,5 @@
     = form.file_field :image
     = form.text_field :description, placeholder: "description", rows: "10"
     = form.collection_select :brand_id, Brand.all, :id, :name, { prompt:  '選択してください' }
-    = form.select :size_id, {'S': 1, 'M': 2, 'ML': 3, 'L': 4, 'XXL': 5, 'XXXL': 6}, { include_blank: '選択してください' } , { class: 'form-control', required: true }
+    = form.collection_select :size_id, Size.all, :id, :name, { prompt:  '選択してください' }
     = form.submit "登録"
