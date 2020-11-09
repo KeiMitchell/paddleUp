@@ -28,8 +28,12 @@ class BoatsController < ApplicationController
   end
 
   def update
-    boat = Boat.find(params[:id])
-    boat.update(boat_params)
+    @boat = Boat.find(params[:id])
+    if @boat.update(boat_params)
+      render "update"
+    else
+      render 'boats/edit'
+    end
   end
 
   def show
