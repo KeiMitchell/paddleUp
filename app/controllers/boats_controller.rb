@@ -48,6 +48,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:image, :description, :brand_id, :size_id).merge(user_id: current_user.id)
+    params.require(:boat).permit(:name, :price, :image, :description, :brand_id, :size_id).merge(user_id: current_user.id)
   end
 end
