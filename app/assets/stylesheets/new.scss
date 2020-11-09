@@ -12,6 +12,7 @@
     padding: 20px 30px;
     background-color: rgb(245, 245, 245);
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    border-radius: 25px;
     .error-message {
       color:#262626; 
       background:#FFEBE8;
@@ -35,7 +36,7 @@
     }
     textarea {
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 25px;
       box-sizing: border-box;
       color: #222;
       font-size: 16px;
