@@ -3,8 +3,8 @@
     = f.label :"船画像"
     = f.file_field :image
     - if @boat.errors.include?(:image)
-        %p.error-message
-          = @boat.errors.full_messages_for(:image).first
+      %p.error-message
+        = @boat.errors.full_messages_for(:image).first
   .boat-form__field--namebox
     = f.label :"モデル名"
     = f.text_field :name, placeholder: "商品名"
