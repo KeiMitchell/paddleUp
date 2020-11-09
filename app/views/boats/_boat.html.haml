@@ -11,18 +11,14 @@
         %li
           = link_to '削除', boat_path(boat.id), method: :delete
   .boat-wrapper__post--info
-    .boat-wrapper__info--description
-      = boat.description
-    %br/
-    .boat-wrapper__info--brand
-      = boat.brand_id
-    %br/
+    .boat-wrapper__info--brands
+      = boat.brand.name
+    .boat-wrapper__info--model
+      = boat.size.name
     .boat-wrapper__info--size
-      = boat.size_id
+      = boat.
     .boat-wrappaer__info--owner
       %span.name
         %a{:href => "/users/#{boat.user.id}"}
           %span 投稿者
           = boat.user.nickname
-
-        -# {:style => "background-image: url(#{image_path "#{boat.image}"})"}
