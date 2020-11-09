@@ -1,24 +1,18 @@
-.boat-wrapper__post
-  .boat-wrapper__post--image{:style => "background-image: url(#{image_path "#{boat.image}"})"}
-  .boat-wrapper__post--more
-    %span= image_tag 'arrow_top.png'
-    %ul.more_list
-      %li
-        = link_to '詳細', boat_path(boat.id), method: :get
-      - if user_signed_in? && current_user.id == boat.user_id
-        %li
-          = link_to '編集', edit_boat_path(boat.id), method: :get
-        %li
-          = link_to '削除', boat_path(boat.id), method: :delete
-  .boat-wrapper__post--info
-    .boat-wrapper__info--brands
-      = boat.brand.name
-    .boat-wrapper__info--model
-      = boat.name
-    .boat-wrapper__info--size
-      = boat.size.name
-    .boat-wrappaer__info--owner
-      %span.name
-        %a{:href => "/users/#{boat.user.id}"}
-          %span 投稿者
-          = boat.user.nickname
+= link_to boat_path(boat.id) do
+  .boat-wrapper__post
+    .boat-wrapper__post__top
+      .boat-wrapper__post__top--image{:style => "background-image: url(#{image_path "#{boat.image}"})"}
+    .boat-wrapper__post__bottom
+      .boat-wrapper__post__bottom--info
+        .boat-wrapper__post__bottom--brand
+          = boat.brand.name
+        .boat-wrapper__post__bottom--model
+          = boat.name
+        .boat-wrapper__post__bottom--size
+          = boat.size.name
+      .boat-wrapper__post__bottom--price
+        ￥
+        %span
+          = boat.price
+        %span / Day
+
