@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
   end
 
   def create
-    Boat.create(boat_params)
+    @boat = Boat.create(boat_params)
   end
 
   def destroy
