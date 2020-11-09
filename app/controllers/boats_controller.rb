@@ -11,7 +11,12 @@ class BoatsController < ApplicationController
   end
 
   def create
-    Boat.create(boat_params)
+    @boat = Boat.create(boat_params)
+    if @boat.save
+      render 'boats/new'
+    else
+      render "new"
+    end
   end
 
   def destroy

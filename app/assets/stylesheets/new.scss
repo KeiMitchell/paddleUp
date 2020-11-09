@@ -12,9 +12,22 @@
     padding: 20px 30px;
     background-color: rgb(245, 245, 245);
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    border-radius: 25px;
+    color: #222;
+    font-size: 16px;
+    .error-message {
+      color:#262626; 
+      background:#FFEBE8;
+      text-align: center;
+      border:2px solid #990000;
+      border-radius: 50px;
+      padding:10px; 
+      font-weight:850;
+      margin: 10px;
+    }
     input, select{
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 50px;
       box-sizing: border-box;
       font-size: inherit;
       height: 48px;
@@ -25,7 +38,7 @@
     }
     textarea {
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 25px;
       box-sizing: border-box;
       color: #222;
       font-size: 16px;

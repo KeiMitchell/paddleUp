@@ -1,21 +1,39 @@
 .boat-form__field
   .boat-form__field--image
     = f.label :"船画像"
-    = f.file_field :image #データベースに未追加の項目
+    = f.file_field :image
+    - if @boat.errors.include?(:image)
+      %p.error-message
+        = @boat.errors.full_messages_for(:image).first
   .boat-form__field--namebox
     = f.label :"モデル名"
-    = f.text_field :name, placeholder: "商品名"
+    = f.text_field :name, placeholder: "商品名(必須 20文字以内)"
+    - if @boat.errors.include?(:name)
+      %p.error-message
+        = @boat.errors.full_messages_for(:name).first
   .boat-form__field--brandbox
     = f.label :"メーカー"
     = f.collection_select :brand_id, Brand.all, :id, :name, { prompt:  '選択してください' }
+    - if @boat.errors.include?(:brand_id)
+      %p.error-message
+        = @boat.errors.full_messages_for(:brand_id).first
   .boat-form__field--sizebox
     = f.label :"サイズ"
     = f.collection_select :size_id, Size.all, :id, :name, { prompt:  '選択してください' }
+    - if @boat.errors.include?(:size_id)
+      %p.error-message
+        = @boat.errors.full_messages_for(:size_id).first
   .boat-form__field--descriptionbox
     = f.label :"説明"
     = f.text_area :description, placeholder: "船の説明(必須 1,000文字以内) (色、重さ、注意点など）", rows: "10"
+    - if @boat.errors.include?(:description)
+      %p.error-message
+        = @boat.errors.full_messages_for(:description).first
   .boat-form__field--spot
   .boat-form__field--price
     = f.label :"価格"
-    = f.number_field :price, placeholder: "0" #データベースに未追加
+    = f.number_field :price, placeholder: "0(必須 1,000円以上50,000円以内）" #データベースに未追加
+    - if @boat.errors.include?(:price)
+      %p.error-message
+        = @boat.errors.full_messages_for(:price).first
   = f.submit "登録する", class:'boat-form__field--btn'
