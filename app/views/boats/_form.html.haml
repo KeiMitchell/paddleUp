@@ -7,7 +7,7 @@
         = @boat.errors.full_messages_for(:image).first
   .boat-form__field--namebox
     = f.label :"モデル名"
-    = f.text_field :name, placeholder: "商品名"
+    = f.text_field :name, placeholder: "商品名(必須 20文字以内)"
     - if @boat.errors.include?(:name)
       %p.error-message
         = @boat.errors.full_messages_for(:name).first
@@ -32,7 +32,7 @@
   .boat-form__field--spot
   .boat-form__field--price
     = f.label :"価格"
-    = f.number_field :price, placeholder: "0" #データベースに未追加
+    = f.number_field :price, placeholder: "0(必須 1,000円以上50,000円以内）" #データベースに未追加
     - if @boat.errors.include?(:price)
       %p.error-message
         = @boat.errors.full_messages_for(:price).first
