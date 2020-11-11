@@ -3,6 +3,7 @@ class Boat < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   belongs_to_active_hash :brand
+  belongs_to_active_hash :size
   has_many :comments
   validates :image, presence: true
   validates :name , presence: true, length: { maximum: 20 }
