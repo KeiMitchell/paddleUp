@@ -64,29 +64,3 @@
           = link_to '編集', edit_boat_path(@boat.id), method: :get
         %li
           = link_to '削除', boat_path(@boat.id), method: :delete
-  .boat-wrapper__info
-  .boat-wrapper__info--description
-    = @boat.description
-  %br/
-  .boat-wrapper__info--brand
-    = @boat.brand_id
-  %br/
-  .boat-wrapper__size
-    = @boat.size_id
-  - if current_user
-    = form_with(model: [@boat, @comment], local: true) do |form|
-      = form.text_area :text, placeholder: "コメントする", rows: "2"
-      = form.submit "SEND"
-  - else
-    %strong
-      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-  .comments
-    %h4 ＜コメント一覧＞
-    - if @comments
-      - @comments.each do |comment|
-        %p
-          %strong
-            = link_to comment.user.nickname, "/users/#{comment.user_id}"
-            ：
-          = comment.text
-
