@@ -3,12 +3,51 @@
   .boat__main
     .boat__main__left
       .boat__main__left--name
-        The Boat
-        = @boat.brand.name
-        = @boat.name
-        = @boat.size.name
+
+        .column
+          .column__name The Boat
+          .column__content
+            = @boat.brand.name
+            = @boat.name
+            = @boat.size.name
+
       .boat__main__left--host
+
+        .column
+          .column__name Hosted by
+          .column__content
+            = @boat.user.nickname
+
+      .boat__main__left--description
+
+        .column
+          .column__name Description
+          .column__content
+            = @boat.description
+
+      .boat__main__left--chat
+
+        .column
+          .column__name Chat
+          .column__content
+            - if current_user
+              = form_with(model: [@boat, @comment], local: true) do |form|
+                = form.text_area :text, placeholder: "comment", rows: "1", class: "column__content--input"
+                = form.submit "SEND", class: "column__content--btn"
+            - else
+              %strong
+                %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+            .column__content--comments
+              %h4 Comments
+              - if @comments
+                - @comments.each do |comment|
+                  %p
+                    %strong
+                      = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                      ：
+                    = comment.text
       
+
     .boat__main__right
       .boat__main__right--price
       .boat__main__right--form
@@ -50,4 +89,4 @@
             = link_to comment.user.nickname, "/users/#{comment.user_id}"
             ：
           = comment.text
-          
+
