@@ -40,6 +40,11 @@
       padding-top: 50px;
       width: 300px;
       background-color: coral;
+      &--price {
+        font-size: 25px;
+        border-bottom: 1px groove rgb(231, 231, 232);
+        font-weight: 900;
+      }
     }
   }
   &__map {
@@ -98,5 +103,5 @@
       border-bottom: 1px groove rgb(231, 231, 232);
     }
   }
-
+  
 }
