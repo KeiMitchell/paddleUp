@@ -7,7 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery");
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -17,8 +16,6 @@ require("jquery");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 //= require bootstrap-datetimepicker
-//= require jquery #追加
-//= require jquery_ujs
 
 var data = {'data-format': 'yyyy-MM-dd hh:mm:ss' };
 $(function(){
