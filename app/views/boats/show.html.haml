@@ -54,9 +54,6 @@
           = @boat.price
         %span / Day
       .boat__main__right--form
-        = form_with(model: [@boat], local: true) do |form|
-          = form.label :日付
-          = form.text_field :created_at, :class => 'datepicker'
       .boat__main__right--favorites
       .boat__main__right--share
   .boat__map
