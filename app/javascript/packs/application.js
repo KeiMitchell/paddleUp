@@ -15,10 +15,3 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-//= require bootstrap-datetimepicker
-
-var data = {'data-format': 'yyyy-MM-dd hh:mm:ss' };
-$(function(){
-    $('.datepicker').attr(data);
-    $('.datepicker').datetimepicker();
-});
