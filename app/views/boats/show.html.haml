@@ -46,10 +46,13 @@
                       = link_to comment.user.nickname, "/users/#{comment.user_id}"
                       ：
                     = comment.text
-      
-
+    
     .boat__main__right
       .boat__main__right--price
+        ￥
+        %span
+          = @boat.price
+        %span / Day
       .boat__main__right--form
       .boat__main__right--favorites
       .boat__main__right--share
